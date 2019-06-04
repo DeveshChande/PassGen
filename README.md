@@ -1,2 +1,2 @@
 # PassGen
-PassGen is a simple program to generator passwords and passphrases.
+PassGen is a simple program to generate passwords and passphrases.
