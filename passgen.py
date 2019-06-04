@@ -22,7 +22,8 @@ elif(args.p is True):
     else:
         print(f'Creating password that consists of {input_characters} characters.')
 
-    final_password = passgen.passgen.password_gen.create_password(input_characters)
+    pwd_obj = passgen.passgen.password_gen()
+    final_password = pwd_obj.create_password(input_characters)
     uncommon_password = passgen.passgen.password_gen.check_password(final_password)
 
     print(f'The generated password is : {uncommon_password}.')
