@@ -11,20 +11,20 @@ passphrase_word_count = 4
 
 class password_gen:
 
-    def pick_number():
+    def pick_number(self):
         secure_number = string.digits[secrets.randbelow(10)]
         return secure_number
 
-    def pick_lowercase():
+    def pick_lowercase(self):
         secure_lowercase_alphabet = string.ascii_lowercase[secrets.randbelow(26)]
 
         return secure_lowercase_alphabet
 
-    def pick_uppercase():
+    def pick_uppercase(self):
         secure_uppercase_alphabet = string.ascii_uppercase[secrets.randbelow(26)]
         return secure_uppercase_alphabet
 
-    def pick_special_char():
+    def pick_special_char(self):
         secure_special_char = special_char[secrets.randbelow(30)]
         return secure_special_char
 
@@ -51,7 +51,7 @@ class password_gen:
 
 class passphrase_gen:
 
-    def create_passphrase():
+    def create_passphrase(self):
         bit_0 = bit_1 = bit_2 = bit_3 = 0
         while ((bit_0 < 1) or (bit_0 > 6)):
             bit_0 = secrets.randbelow(10)
@@ -76,7 +76,7 @@ class passphrase_gen:
 
 class mixedgen:
 
-    def create_mixedgen():
+    def create_mixedgen(self):
         print('Enter the number of words that you would like to include in the mixed passphrase.')
         mix_count = int(input())
         mixedgen_list = [password_gen.pick_lowercase, password_gen.pick_uppercase, password_gen.pick_number, password_gen.pick_special_char]
