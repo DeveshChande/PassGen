@@ -51,6 +51,7 @@ class password_gen:
 
 class passphrase_gen:
 
+    @staticmethod
     def create_passphrase(self):
         bit_0 = bit_1 = bit_2 = bit_3 = 0
         while ((bit_0 < 1) or (bit_0 > 6)):
@@ -76,6 +77,7 @@ class passphrase_gen:
 
 class mixedgen:
 
+    @staticmethod
     def create_mixedgen(self):
         print('Enter the number of words that you would like to include in the mixed passphrase.')
         mix_count = int(input())
