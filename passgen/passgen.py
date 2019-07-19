@@ -32,7 +32,7 @@ class password_gen:
 
     def create_password(input_characters):
         password = ''
-        for i in range(input_characters):
+        for _ in range(input_characters):
             temp = (password_gen.secret_function_list[secrets.randbelow(4)])()
             password += temp
         return password
@@ -89,7 +89,7 @@ class mixedgen:
                 mixed_passphrase = mixed_passphrase + mixedgen_list[secrets.randbelow(4)]()
                 mix_count = mix_count - 1
             else:
-                mixed_passphrase = mixed_passphrase + passphrase_gen.create_passphrase()
+                mixed_passphrase = mixed_passphrase + passphrase_gen.create_passphrase(self)
                 mix_count = mix_count - 1
 
         return (mixed_passphrase)
