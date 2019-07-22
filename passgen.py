@@ -9,7 +9,8 @@ args = parser.parse_args()
 
 if (args.mg is True):
 
-    final_mixgen_passphrase = passgen.passgen.mixedgen.create_mixedgen()
+    h = passgen.passgen.mixedgen
+    final_mixgen_passphrase = h.create_mixedgen()
     print(f'The generated mixed passphrase is : {final_mixgen_passphrase}')
 
 elif(args.p is True):
@@ -22,8 +23,9 @@ elif(args.p is True):
     else:
         print(f'Creating password that consists of {input_characters} characters.')
 
-    final_password = passgen.passgen.password_gen.create_password(input_characters)
-    uncommon_password = passgen.passgen.password_gen.check_password(final_password, input_characters)
+    p = passgen.passgen.password_gen()
+    final_password = p.create_password(input_characters)
+    uncommon_password = p.check_password(final_password, input_characters)
 
     print(f'The generated password is : {uncommon_password}.')
 
@@ -32,7 +34,8 @@ elif(args.pr is True):
     count = int(input())
     passphrase = ''
     while(count > 0):
-        passphrase = (passphrase) + (passgen.passgen.passphrase_gen.create_passphrase())
+        phr = passgen.passgen.passphrase_gen()
+        passphrase = (passphrase) + (phr.create_passphrase())
         count = count - 1
     print(f'The generated passphrase is : {passphrase}')
 else:
